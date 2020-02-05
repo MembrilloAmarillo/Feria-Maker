@@ -1,0 +1,15 @@
+Necesito de:
+  Arduino --------------- √
+  Panel Solar ----------- √
+  Cables ---------------- √
+  Servomotores ---------- √
+  Sensores de humedad --- √
+  Pila ------------------ √
+
+Pasos:
+  1. Preparar los servomotores --------------------------
+  2. Juntar panel solar con pila ------------------------
+  3. Juntar panel solar con los servomotores ------------
+  4. Programar el codigo para los servomotores ---------- √
+  5. Preparar los sensores de humedad -------------------
+  6. Programar el codigo para los sensores de humedad --- √
