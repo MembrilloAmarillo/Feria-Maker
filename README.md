@@ -2,7 +2,7 @@
 ---
 >This is a self-directed solar panel prototype (sunflower). It will energize moisture sensors that will alert a water tank if you have to water the crops or not, depending on the level of moisture in the soil.
 
-> NOTE: The code is not finish yet
+> NOTE: The code is finished
 
 ## Parts
 ---
