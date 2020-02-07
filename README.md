@@ -7,10 +7,11 @@
 ## Parts
 ---
 > Arduino(in this case I use an Arduino One)
-  * wires
-  * moisture sensors
-  * servo-motors
-  * motor
+  * wires (lots xD)
+  * moisture sensors (the amount you want)
+  * servo-motors x3
+  * motor (optional)
+  * photoresistors x4
 
 > Non-relation with arduino
 > - Solar Panel

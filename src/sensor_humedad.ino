@@ -49,6 +49,8 @@ void loop(){
   Serial.print(t);
   Serial.print(" *C ");
 
+// Depending on the humidity the trap attached to the servo will open
+// and let the water pass through
     if(h < 40){
       servo_h = servo_h_LimitLow;
     }else{
