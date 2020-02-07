@@ -1,7 +1,7 @@
 #include "DHT.h"
 #include <Servo.h>
 
-Servo horizontal;
+Servo horizontal_2;
 int servo_h = 90;
 
 int servo_h_LimitHigh = 180;
@@ -16,7 +16,6 @@ Connect pin 2 of the sensor to whatever your DHTPIN is
 Connect pin 4 (on the right) of the sensor to GROUND
 Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
 */
-#define DHTTYPE DHT11
 const int DHTPIN = 5; //What digital pin we're connected to
 #ifdef DHTTYPE DHT11
   DHT dht(DHTPin, DHTTYPE);
@@ -25,8 +24,8 @@ void setup(){
   Serial.begin(9600);
   Serial.println("DHT 11 test!");
   // pinMode(DHTPIN, INPUT); se supone que no hace falta
-  horizontal.attach(8);
-  horizontal.write(180)
+  horizontal_2.attach(8);
+  horizontal_2.write(180)
   dht.begin();
 }
 
@@ -56,6 +55,6 @@ void loop(){
     }else{
       servo_h = servo_h_LimitLow;
     }
-    horizontal.write(servo_h);
+    horizontal_2.write(servo_h);
 
   }

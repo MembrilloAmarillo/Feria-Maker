@@ -1,4 +1,13 @@
 #include <Servo.h>
+#include "DHT.h"
+
+#define DHTTYPE DHT11
+//Connection to the humidity sensor
+const int DHTPIN = 5; //What digital pin we're connected to
+#ifdef DHTTYPE DHT11
+  DHT dht(DHTPin, DHTTYPE);
+#endif
+
 
 // 180 horizontal MAX
 Servo horizontal; // horizontal servo
@@ -6,6 +15,13 @@ int servoh = 90;   // 90;     // stand horizontal servo
 
 int servohLimitHigh = 180;
 int servohLimitLow = 65;
+
+//Horizontal servo for the door
+Servo horizontal_2;
+int servo_h = 90;
+
+int servo_h_LimitHigh = 180;
+int servo_h_LimitLow = 65;
 
 // 65 degrees MAX
 Servo vertical;   // vertical servo
@@ -28,9 +44,15 @@ void setup()
 // servo connections
 // name.attacht(pin);
   horizontal.attach(9);
-  vertical.attach(10);
   horizontal.write(180);
+
+  vertical.attach(10);
   vertical.write(45);
+
+  horizontal_2.attach(8);
+  horizontal_2.write(180);
+  dht.begin();
+
   delay(3000);
 }
 
@@ -115,5 +137,31 @@ void loop()
   horizontal.write(servoh);
   }
    delay(dtime);
+
+   //Door algorithm to open and close
+   float h = dht.readHumidity();
+   float t = dht.readTemperature();
+
+   if(isnan(h) || isnan(t)){
+     Serial.println("Failed to read from DHT sensor...");
+     return;
+   }
+
+   Serial.print("Humidity: ");
+   Serial.print(h);
+   Serial.print(" %\t");
+   Serial.print("Temperature: ");
+   Serial.print(t);
+   Serial.print(" *C ");
+
+ // Depending on the humidity the trap attached to the servo will open
+ // and let the water pass through
+     if(h < 40){
+       servo_h = servo_h_LimitLow;
+     }else{
+       servo_h = servo_h_LimitLow;
+     }
+     horizontal_2.write(servo_h);
+
 
 }
