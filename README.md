@@ -29,6 +29,6 @@
 > 'You can either use 'brew cask install arduino' ' \
 > DHT library (from Adafruit): https://github.com/adafruit/DHT-sensor-library.git
 ## Author
-> Created and posted by SadenPain under GNL license \
+> Created and posted by SadenPain under GPL license \
 > For more info contact me at:
 > (SadenPain@gmail.com)
